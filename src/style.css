@@ -14,7 +14,7 @@
   text-rendering: optimizeLegibility;
   font-optical-sizing: auto;
   letter-spacing: .015em;
-  word-spacing: .14em;
+  word-spacing: .3em;
   letter-spacing: .015em;
   word-spacing: .14em;
   --ink: #17324f;
@@ -82,7 +82,7 @@ h1 {
   font-weight: 800;
   line-height: 1;
   letter-spacing: .02em;
-  word-spacing: .22em;
+  word-spacing: .44em;
 }
 
 .subtitle { margin: 9px 0 0; color: #d5e2ef; font-size: 12px; }
