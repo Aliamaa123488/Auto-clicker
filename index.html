@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101113" />
+    <title>Auto Clicker — Professor Soly × Codex</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <div class="credit"><span class="credit-dot"></span> PROFESSOR SOLY <span class="cross">×</span> CODEX</div>
+          <h1>Auto Clicker</h1>
+          <p class="subtitle">A simple tool for repeating keyboard presses and mouse clicks.</p>
+        </div>
+        <div class="hotkey-badge" aria-label="F6 toggles start and stop">
+          <span class="hotkey-label">START / STOP</span>
+          <kbd>F6</kbd>
+        </div>
+      </header>
+
+      <main>
+        <fieldset id="config-controls" class="settings-card">
+          <legend class="visually-hidden">Clicker settings</legend>
+          <div class="mode-switch" role="tablist" aria-label="Automation mode">
+            <button class="mode-tab active" id="keyboard-tab" type="button" role="tab" aria-selected="true" data-mode="keyboard">
+              <span class="mode-icon keyboard-icon" aria-hidden="true">⌨</span> Keyboard
+            </button>
+            <button class="mode-tab" id="mouse-tab" type="button" role="tab" aria-selected="false" data-mode="mouse">
+              <span class="mode-icon mouse-icon" aria-hidden="true">●</span> Mouse
+            </button>
+          </div>
+
+          <section id="keyboard-panel" class="mode-panel" role="tabpanel" aria-labelledby="keyboard-tab">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">KEYBOARD MODE</p>
+                <h2>Choose a key to repeat</h2>
+              </div>
+              <span class="section-mark" aria-hidden="true">01</span>
+            </div>
+            <label class="field-label" for="key-choice">Keyboard key</label>
+            <button id="key-choice" class="key-picker" type="button" aria-describedby="key-help">
+              <span id="key-value" class="key-value">Choose a key</span>
+              <span class="key-picker-action">PRESS A KEY</span>
+            </button>
+            <p id="key-help" class="field-help">Click the box, then press any key. F6 is reserved for Start / Stop.</p>
+          </section>
+
+          <section id="mouse-panel" class="mode-panel" role="tabpanel" aria-labelledby="mouse-tab" hidden>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">MOUSE MODE</p>
+                <h2>Choose a click</h2>
+              </div>
+              <span class="section-mark" aria-hidden="true">02</span>
+            </div>
+            <div class="mouse-options">
+              <div class="field-group">
+                <label class="field-label" for="mouse-button">Mouse button</label>
+                <select id="mouse-button" class="select-control">
+                  <option value="left">Left button</option>
+                  <option value="right">Right button</option>
+                  <option value="middle">Middle button</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <span class="field-label">Click type</span>
+                <div class="segmented" role="group" aria-label="Click type">
+                  <button class="segment active" type="button" data-click-type="single" aria-pressed="true">Single</button>
+                  <button class="segment" type="button" data-click-type="double" aria-pressed="false">Double</button>
+                </div>
+              </div>
+            </div>
+            <p class="field-help mouse-help">Clicks land wherever your pointer is when each click happens.</p>
+          </section>
+
+          <section class="interval-panel" aria-labelledby="interval-title">
+            <div class="section-heading interval-heading">
+              <div>
+                <p class="eyebrow">TIMING</p>
+                <h2 id="interval-title">Repeat interval</h2>
+              </div>
+              <div class="interval-input-wrap">
+                <input id="interval-number" class="interval-number" type="number" value="1.00" min="0.01" max="86400" step="0.01" inputmode="decimal" aria-label="Seconds between actions" />
+                <span>seconds</span>
+              </div>
+            </div>
+            <input id="interval-slider" class="interval-slider" type="range" min="0.05" max="5" step="0.05" value="1" aria-label="Adjust repeat interval from 0.05 to 5 seconds" />
+            <div class="slider-labels"><span>0.05 sec</span><span>5 sec</span></div>
+            <p class="field-help">Use the number box for longer intervals. The minimum interval is 0.01 seconds.</p>
+          </section>
+        </fieldset>
+
+        <section class="action-card" aria-label="Start or stop automation">
+          <div class="status-block">
+            <span id="status-indicator" class="status-indicator" aria-hidden="true"></span>
+            <div>
+              <p id="status-title" class="status-title">Ready when you are</p>
+              <p id="status-detail" class="status-detail">Focus the window you want to control, then press F6.</p>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button id="start-button" class="action-button start-button" type="button"><span class="play-symbol" aria-hidden="true">▶</span> Start</button>
+            <button id="stop-button" class="action-button stop-button" type="button" disabled><span class="stop-symbol" aria-hidden="true"></span> Stop</button>
+          </div>
+        </section>
+        <p id="notice" class="notice" role="status" aria-live="polite"></p>
+      </main>
+      <footer class="footer"><span>Professor Soly <span class="cross">×</span> Codex</span><span>Portable Windows app <i></i> F6 toggles Start / Stop</span></footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
