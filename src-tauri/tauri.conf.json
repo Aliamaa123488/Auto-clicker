@@ -13,10 +13,10 @@
     "windows": [
       {
         "title": "Professor Soly Auto Clicker",
-        "width": 860,
-        "height": 690,
-        "minWidth": 640,
-        "minHeight": 600,
+        "width": 800,
+        "height": 620,
+        "minWidth": 600,
+        "minHeight": 540,
         "resizable": true,
         "center": true
       }
