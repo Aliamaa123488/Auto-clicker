@@ -23,8 +23,8 @@ for (let fileY = 0; fileY < size; fileY += 1) {
     const dx = x - 30;
     const dy = y - 29;
     const radius = Math.hypot(dx, dy);
-    let color = [16, 17, 19, 255];
-    if (radius >= 18 && radius <= 22) color = [185, 243, 109, 255];
+    let color = [23, 50, 79, 255];
+    if (radius >= 18 && radius <= 22) color = [114, 225, 195, 255];
     if (radius <= 4) color = [249, 250, 251, 255];
     if (insidePolygon(x, y, [[36, 35], [51, 58], [45, 57], [41, 51], [37, 57]])) {
       color = [249, 250, 251, 255];
